@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Será que você é um bom motorista?</h2>
+    <again>Limite Ok: <strong>70km/h</strong></again><br>
+    <again>Passou do Limites: <strong>150km/h</strong></again>
+    <div class="calculando-limite">
+        <input type="number" name="limite-one" id="vel-1">
+        <input type="button" value="Veificar" onclick="somar_limite()">
+    </div>
+    <div id="limite-resultado">
+
+    </div>
+
+    <script>
+        function somar_limite() {
+            var velocidade_atual = Number(window.document.getElementById('vel-1').value)
+            var resultado = window.document.getElementById('limite-resultado')
+            resultado.innerHTML = `Sua velocidade atual  é ${velocidade_atual}`
+            if (velocidade_atual > 150) {
+                resultado.innerHTML = ' <p> Você ultrapassou o LIMITE de trânsito, sendo assim, será multado.</p>'
+            } else {
+                resultado.innerHTML = '<p>Você é um excelente motorista!</p>'
+            }
+        }
+    </script>
+
+</body>
+</html>
